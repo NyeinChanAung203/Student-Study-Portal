@@ -6,12 +6,12 @@
 <div class="container">
     <div class="row">
         {% for note in notes%}
-        <div class="col-md-3">
+        <div class="col-md-3 mb-3">
             <a href="{{note.get_absolute_url}}">
                 <div class="card">
                     <div class="card-header">{{note.title}}</div>
                     <div class="card-body">{{note.description|truncatechars:100}}</div>
-                    <div class="card-footer mt-auto">
+                    <div class="card-footer mt-auto text-center">
                         <a href="{% url 'delete-note' note.pk %}">
                             <i class="fa fa-trash fa-2x"></i>
                         </a>
@@ -33,7 +33,7 @@
         </fieldset>
         {{form|crispy}}
         <div class="form-group">
-            <button href="" class="btn btn-outline-info" type="submit">
+            <button href="" class="btn btn-outline-info mt-3" type="submit">
                 Create
             </button>
         </div>
